@@ -1,0 +1,137 @@
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .developer-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #6b7280, #4b5563, #374151);
+  }
+  
+  .developer-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  /* Developer.css */
+.developer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to right, #6b7280, #4b5563, #374151);
+    padding: 2rem;
+  }
+
+  .developer-card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    margin: 0 2.5%;
+  }
+
+  .developer-card {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 1.7rem;
+    background-color: #f9fafb;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.15);
+  }
+
+  .developer-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .developer-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+
+  .developer-role {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+  }
+
+  .developer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-contact, .btn-portfolio {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .btn-contact {
+    background-color: #6b7280;
+    color: #f9fafb;
+  }
+
+  .btn-contact:hover {
+    background-color: #4b5563;
+    transform: translateY(-3px);
+  }
+
+  .btn-portfolio {
+    background-color: #e5e7eb;
+    color: #4b5563;
+  }
+
+  .btn-portfolio:hover {
+    background-color: #d1d5db;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .developer-container {
+      flex-direction: column;
+    }
+
+    .developer-card-wrapper {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .developer-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .developer-card-wrapper {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }

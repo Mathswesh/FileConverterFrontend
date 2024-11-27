@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { Navbar } from './Jsxfile/Navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Jsxfile/Navbar'
 import { Footer } from './Jsxfile/Footer'
 import { Signin } from './Jsxfile/Signin'
 import { Homepage } from './Jsxfile/Homepage'
 import { Developer } from './Jsxfile/Developer'; 
-import { Route , Routes } from 'react-router-dom';
+
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Routes>
-          <Route path='/' element={<Homepage/>}></Route>
-          <Route path='/home' element={<Homepage/>}></Route>
-          <Route path="/signin" element={<Signin/>}></Route>
-          <Route path='/developer' element={<Developer/>}></Route>
-      </Routes>
-      <Footer/>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Homepage/>}/>
+          <Route path='/home' element={<Homepage/>}/>
+          <Route path="/signin" element={<Signin/>}/>
+          <Route path='/developer' element={<Developer/>}/>
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
+
 export default App;

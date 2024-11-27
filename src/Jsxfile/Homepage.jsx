@@ -1,44 +1,96 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/homepage.css'
+
 export const Homepage = () => {
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
+    };
+
+    const fileConversionFeatures = [
+        {
+            icon: 'fa-file-pdf',
+            title: 'PDF Conversion',
+            description: 'Convert PDFs to various formats with high-quality preservation of original content.'
+        },
+        {
+            icon: 'fa-image',
+            title: 'Image Transformation',
+            description: 'Resize, compress, and convert images between multiple formats quickly.'
+        },
+        {
+            icon: 'fa-compress',
+            title: 'File Compression',
+            description: 'Reduce file sizes without losing quality, saving storage and bandwidth.'
+        }
+    ];
 
     return (
-        <div>
-            <div className='page1'>
+        <div className="homepage-container">
+            <section className="hero-section">
+                <div className="upload-section">
+                    <div className="upload-header">
+                        <h1>Upload, Convert, Transform</h1>
+                        <p>Effortless file conversions with high-quality results</p>
+                    </div>
 
-                <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray md:text-5xl lg:text-6xl dark:text-white">Put your file here.</h1>
-                <div className='page1button'>
-                    <label htmlFor="fileupload"><i class="fa-solid fa-plus"></i>Add file</label>
-                    <input type="file" name="" id="fileupload" />
-                </div>
-                <div className="page1types">
-                    <button><i class="fa-brands fa-dropbox"></i></button>
-                    <button><i class="fa-brands fa-google-drive"></i></button>
-                    <button><i class="fa-solid fa-link"></i></button>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <p class="card-title">Total file Converted
-                        </p><p class="card-para">Ex : 112343434</p>
+                    <div className="file-upload-container">
+                        <div className="file-upload-box">
+                            <div className="file-upload-icon">
+                                <i className="fa-solid fa-cloud-upload"></i>
+                            </div>
+                            
+                            <input 
+                                type="file" 
+                                id="fileupload" 
+                                className="file-input" 
+                                onChange={handleFileChange}
+                            />
+                            
+                            <label htmlFor="fileupload" className="file-upload-label">
+                                {selectedFile 
+                                    ? `Selected: ${selectedFile.name}` 
+                                    : 'Drag & Drop or Click to Upload'}
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="upload-alternatives">
+                        <p>Or upload from:</p>
+                        <div className="platform-buttons">
+                            <button className="platform-btn" title="Dropbox">
+                                <i className="fa-brands fa-dropbox"></i>
+                            </button>
+                            <button className="platform-btn" title="Google Drive">
+                                <i className="fa-brands fa-google-drive"></i>
+                            </button>
+                            <button className="platform-btn" title="Import via Link">
+                                <i className="fa-solid fa-link"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="page2">
-                <div className="page2container1">
-                    <h1>Features of our website.</h1>
-                </div>
-                <div className='page2container'>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
+            </section>
 
+            <section className="features-section">
+                <div className="features-header">
+                    <h2>What We Offer</h2>
+                    <p>Advanced file conversion solutions tailored to your needs</p>
                 </div>
-                <div className='page2container'>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
-                    <div className="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis omnis asperiores porro ad alias magni minima cumque distinctio doloremque ratione?</div>
+                <div className="features-grid">
+                    {fileConversionFeatures.map((feature, index) => (
+                        <div key={index} className="feature-box">
+                            <div className="feature-icon">
+                                <i className={`fas ${feature.icon}`}></i>
+                            </div>
+                            <h3>{feature.title}</h3>
+                            <p>{feature.description}</p>
+                        </div>
+                    ))}
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
