@@ -1,3 +1,4 @@
+/* Update src/css/signup.css */
 body {
     font-family: Arial, sans-serif;
     margin: 1%;
@@ -7,7 +8,7 @@ body {
     flex-direction: column;
 }
 
-.signin-container {
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +17,7 @@ body {
     padding-bottom: 20px;
 }
 
-.signin-form-wrapper {
+.signup-form-wrapper {
     width: 100%;
     max-width: 400px;
     background-color: #fff;
@@ -25,25 +26,25 @@ body {
     padding: 30px;
 }
 
-.signin-form-wrapper h2 {
+.signup-form-wrapper h2 {
     text-align: center;
     margin-bottom: 25px;
     color: #333;
     font-size: 24px;
 }
 
-.signin-form .form-group {
+.signup-form .form-group {
     margin-bottom: 20px;
 }
 
-.signin-form label {
+.signup-form label {
     display: block;
     margin-bottom: 8px;
     color: #555;
     font-weight: 600;
 }
 
-.signin-form input {
+.signup-form input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -52,13 +53,13 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.signin-form input:focus {
+.signup-form input:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
-.signin-btn {
+.signup-btn {
     width: 100%;
     padding: 12px;
     background-color: #007bff;
@@ -70,42 +71,29 @@ body {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.signin-btn:hover {
+.signup-btn:hover {
     background-color: #0056b3;
 }
 
-.signin-btn:active {
+.signup-btn:active {
     transform: scale(0.98);
 }
 
-.forgot-password {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: #007bff;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.signup-link {
+.login-link {
     text-align: center;
     margin-top: 20px;
     color: #6c757d;
     font-size: 14px;
 }
 
-.signup-link a {
+.login-link a {
     color: #007bff;
     text-decoration: none;
     font-weight: 600;
     margin-left: 5px;
 }
 
-.signup-link a:hover {
+.login-link a:hover {
     text-decoration: underline;
 }
 
@@ -118,13 +106,13 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 480px) {
-    .signin-form-wrapper {
+    .signup-form-wrapper {
         width: 90%;
         margin: 0 auto;
         padding: 20px;
     }
 
-    .signin-form-wrapper h2 {
+    .signup-form-wrapper h2 {
         font-size: 20px;
     }
 }

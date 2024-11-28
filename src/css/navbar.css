@@ -61,8 +61,11 @@
     color: var(--white);
 }
 
-.signin-btn-container {
+.sign-btn-container {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .signin-btn {
@@ -76,6 +79,20 @@
 }
 
 .signin-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.signup-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
     background-color: var(--secondary-color);
 }
 
